@@ -1,0 +1,19 @@
+[package]
+name = "backend-service-profile"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# openssl
+ssl = ["openssl", "actix-server/ssl", "awc/ssl"]
+
+# rustls
+rust-tls = ["rustls", "actix-server/rust-tls"]
+
+[dependencies]
+actix-web = { version = "4.3.1"}
+awc = { version = "3.1.1", features = ["rustls"] }
+rustls = "0.21.5"
+serde = { version = "1.0", features = ["derive"] }
+env_logger = "0.10.0"
