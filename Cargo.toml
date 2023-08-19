@@ -14,6 +14,12 @@ rust-tls = ["rustls", "actix-server/rust-tls"]
 [dependencies]
 actix-web = { version = "4.3.1"}
 awc = { version = "3.1.1", features = ["rustls"] }
+mime = "0.3.17"
 rustls = "0.21.5"
 serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.103"
+bytes = "1.4.0"
 env_logger = "0.10.0"
+log = "0.4.19"
+
+rust-keycloak = "0.0.7"
