@@ -23,12 +23,11 @@ async fn register(register_body: web::Json<UserRegister>) -> HttpResponse {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    
-    env_logger::init_from_env(Env::default());
+
+    env_logger::init_from_env(Env::new().default_filter_or("info"));
     
     HttpServer::new(|| {
         App::new()
-            .wrap(Logger::default())
             .wrap(Logger::new("%a %{User-Agent}i"))
             .service(login)
             .service(register)
